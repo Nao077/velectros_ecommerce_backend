@@ -1,180 +1,155 @@
-🚀 VELECTROS Backend API
-<p align="center"> Backend officiel de la plateforme e-commerce <strong>VELECTROS (Victory Electronics Store)</strong> </p> <p align="center">
+# 🚀 VELECTROS Backend API
 
-
-
-
-
-
+<p align="center">
+Backend officiel de la plateforme e-commerce <strong>VELECTROS (Victory Electronics Store)</strong>
 </p>
-📌 Table des matières
 
-À propos
+---
 
-Stack technique
+## 📌 Table des matières
 
-Architecture
+- [À propos](#-à-propos)
+- [Stack technique](#-stack-technique)
+- [Architecture](#-architecture)
+- [Authentification & Sécurité](#-authentification--sécurité)
+- [Fonctionnalités](#-fonctionnalités)
+- [Installation](#-installation)
+- [Tests](#-tests)
+- [Déploiement](#-déploiement)
+- [Licence](#-licence)
 
-Authentification & Sécurité
+---
 
-Fonctionnalités principales
+## 🏢 À propos
 
-Installation
+**VELECTROS** est une entreprise camerounaise spécialisée dans la vente d’accessoires électroniques modernes et accessibles.
 
-Tests
+Ce backend constitue le **moteur central** de la plateforme e-commerce.
 
-
-Licence
-
-🏢 À propos
-
-VELECTROS est une entreprise camerounaise spécialisée dans la vente d’accessoires électroniques modernes et accessibles.
-
-Ce backend constitue le moteur central de la plateforme e-commerce.
 Il alimente :
 
-🛍 L’application client (Next.js – PWA)
+- 🛍 Application client (Next.js – PWA)
+- 🧑‍💼 Panneau d’administration (React.js)
+- 📊 Outils internes de gestion
 
-🧑‍💼 Le panneau d’administration (React.js)
+### 🎯 Objectifs
 
-📊 Les outils internes de gestion
+- Digitaliser l’activité commerciale  
+- Automatiser la gestion des commandes et stocks  
+- Structurer l’entreprise pour une expansion nationale  
+- Professionnaliser l’image de marque  
 
-Objectifs principaux :
+---
 
-Digitaliser entièrement l’activité commerciale
+## 🧱 Stack technique
 
-Automatiser commandes et gestion de stock
+| Technologie | Version |
+|-------------|----------|
+| Laravel     | 10+ |
+| PHP         | 8.2+ |
+| MySQL       | 8+ |
+| Auth        | Sanctum |
+| Architecture| RESTful API |
 
-Structurer l’entreprise pour une expansion nationale
+---
 
-Professionnaliser l’image de marque
+## 🏗 Architecture
 
-🧱 Stack technique
-Framework     : Laravel 10+
-Langage       : PHP 8.2+
-Base de donnée: MySQL 8+
-Auth          : SANCTUM
-Architecture  : RESTful API
+Le projet suit une organisation modulaire claire :
 
-🏗 Architecture
+- **Controllers** → Gestion des requêtes HTTP  
+- **Requests** → Validation des données  
+- **Services** → Logique métier  
+- **Repositories** → Accès base de données  
+- **Policies & Middleware** → Gestion des permissions  
+- **Events & Listeners** → Automatisations (emails, stock, notifications)  
 
-Le projet suit une organisation modulaire :
+L’API est versionnée pour garantir la stabilité des intégrations futures.
 
-Controllers → Gestion des requêtes HTTP
+---
 
-Requests → Validation des données
+## 🔐 Authentification & Sécurité
 
-Services → Logique métier
+Authentification basée sur **Laravel Sanctum**.
 
-Repositories → Accès base de données
+### 👥 Rôles disponibles
 
-Policies & Middleware → Gestion des permissions
+- Super Admin  
+- Gestionnaire  
+- Livreur  
+- Client  
 
-Events & Listeners → Automatisations (emails, stock, notifications)
+### 🔒 Sécurité
 
-L’API est versionnée pour assurer la stabilité des intégrations futures.
+- Hashage des mots de passe (bcrypt)  
+- Middleware RBAC  
+- Rate limiting  
+- Validation stricte côté serveur  
+- Protection contre accès non autorisés  
+- Logs des actions critiques  
 
-🔐 Authentification & Sécurité
+---
 
-Authentification basée sur JWT.
+## ⚙️ Fonctionnalités
 
-👥 Rôles disponibles
+### 🛍 Catalogue Produits
 
-Super Admin
+- CRUD produits  
+- Gestion des catégories  
+- Variantes  
+- Upload images  
+- Recherche & filtres  
+- Gestion des statuts  
 
-Gestionnaire
+### 📦 Gestion des Stocks
 
-Livreur
+- Stock par produit / variante  
+- Déduction automatique  
+- Réintégration en cas d’annulation  
+- Seuil d’alerte  
 
-Client
+### 🧾 Commandes
 
-🔒 Sécurité
+- Création de commande  
+- Cycle de vie structuré  
+- Assignation livreur  
+- Notifications email  
+- Export des données  
 
-Hashage bcrypt
+### 💳 Paiements
 
-Middleware RBAC
+- Paiement à la livraison  
+- Intégration Mobile Money  
+- Webhooks  
+- Suivi des transactions  
 
-Rate limiting
+### 🚚 Livraison
 
-Validation stricte côté serveur
+- Configuration des zones  
+- Gestion des livreurs  
+- Mise à jour des statuts  
 
-Protection contre accès non autorisés
+### 📊 Reporting
 
-Logs des actions critiques
+- KPIs principaux  
+- Statistiques de ventes  
+- Exports Excel  
 
-⚙️ Fonctionnalités principales
-🛍 Catalogue Produits
+---
 
-CRUD produits
+## ⚙️ Installation
 
-Gestion catégories
+### 1️⃣ Cloner le projet
 
-Variantes
-
-Upload images
-
-Recherche et filtres
-
-Gestion des statuts
-
-📦 Gestion des Stocks
-
-Stock par produit / variante
-
-Déduction automatique
-
-Réintégration en cas d’annulation
-
-Seuil d’alerte
-
-🧾 Commandes
-
-Création commande
-
-Cycle de vie structuré
-
-Assignation livreur
-
-Notifications email
-
-Export des données
-
-💳 Paiements
-
-Paiement à la livraison
-
-Intégration Mobile Money
-
-Webhooks
-
-Suivi transactions
-
-🚚 Livraison
-
-Configuration des zones
-
-Gestion des livreurs
-
-Mise à jour des statuts
-
-📊 Reporting
-
-KPIs principaux
-
-Statistiques de ventes
-
-Exports Excel
-
-⚙️ Installation
-1️⃣ Cloner le projet
+```bash
 git clone https://github.com/velectros/velectros-backend.git
 cd velectros-backend
+
 2️⃣ Installer les dépendances
 composer install
 3️⃣ Configuration environnement
 cp .env.example .env
 php artisan key:generate
-php artisan jwt:secret
 
 Configurer le fichier .env :
 
@@ -206,12 +181,11 @@ Paiements
 Permissions
 
 🚀 Déploiement
-
 Optimisation production
 php artisan config:cache
 php artisan route:cache
 php artisan queue:work
-
+📄 Licence
 
 Projet propriétaire
 VELECTROS © 2026
